@@ -1,3 +1,5 @@
+import time
+
 coins = [50, 25, 10, 5, 2, 1]
 
 def find_coins_greedy(amount):
@@ -28,10 +30,16 @@ def find_min_coins(amount):
     return result
 
 if __name__ == "__main__":
-    amount = 113
+    amount = 9999
 
+    start_time = time.time()
     greedy_result = find_coins_greedy(amount)
+    greedy_time = time.time() - start_time
     print("Жадібний алгоритм результат:", greedy_result)
+    print("Час виконання жадібного алгоритму:", greedy_time, "секунд")
 
+    start_time = time.time()
     dp_result = find_min_coins(amount)
+    dp_time = time.time() - start_time
     print("Алгоритм динамічного програмування результат:", dp_result)
+    print("Час виконання алгоритму динамічного програмування:", dp_time, "секунд")
